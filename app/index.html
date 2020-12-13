@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MówMi v.0.1</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon"  href="https://monito.cloud/mowmi/app/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+    <link rel='stylesheet' type='text/css' href='./css/style.css'>
+</head>
+
+<body>
+    <div id='main'>
+        <div id='logo'>
+            <img id='logo1' src='./img/logo_mowmi.png' width=200 height=200 />
+			<img id='logo4' src='./img/logo_stargazing_capybaras.png' height=100/>
+            <img id='logo3' src='./img/logo_fundacja.png' />
+			<img id='logo2' src='./img/10clouds.svg' />
+            <img id="logo5" src="./img/logo_coderslab.svg" height=50>
+        </div>
+        <div id='content'>
+            <button title='Zwiększ rozmiar czcionki okna rozmowy' style='position:absolute; right:140px; top:20px; z-index:10000;' onclick="javascript:changeFont(+1);" class="button default cycle "><span class='mif-arrow-up'></span></button>
+            <button title='Zmniejsz rozmiar czczionki okna rozmowy.' style='position:absolute; right:100px; top:20px; z-index:10000;' onclick="javascript:changeFont(-1);" class="button yellow cycle "><span class='mif-arrow-down'></span></button>
+            <button title='Zapisz rozmowę do pliku' style='position:absolute; right:60px; top:20px; z-index:10000;' onclick="javascript:exportHistory();" class="button default cycle fg-pink"><span class='mif-folder-download'></span></button>
+            
+			<button title='Kliknij aby uzyskać pomoc' style='position:absolute; right:20px; top:20px; z-index:10000;' onclick="javascript:showInfo();" class="button info cycle "><span class='mif-info'></span></button>
+            <div style='margin:0 auto; width:100%; text-align:center;'><img id='logo_main' src='./img/logo_mowmi_main.png' width=200 height=75 /></div>
+
+            <select title='Wybierz, w jakim języku aplikacja ma słuchać i czytać teksty' data-role="select" data-prepend="Wybierz język spotkania:" data-filter=false 
+                id='audioSelector'>
+
+
+            </select>
+   
+            <div style='display:none;'>
+                <input id='query' />
+                <button id='translate'>TRANSLATE</button>
+                <br />
+            </div>
+            <ul id='textarea'>
+               
+            </ul>
+            <button id="button" title='Kliknij tutaj aby włączyć słuchanie! Następnie dołącz do spotkania online' style='position:absolute;' class='button  shadowed cycle ' onclick="javascript:toggleStartStop()"><span style='' class='mif-record_voice_over'></span></button>
+            <input title='Napisz, co asystent głosowy powie w Twoim imieniu na spotkaniu' type="text" id='what' data-role="input" data-prepend="Powiedz coś: ">
+            <div style='width:20px;'>
+            <div id='speakingBar'></div>
+        </div>
+        </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
+</html>
